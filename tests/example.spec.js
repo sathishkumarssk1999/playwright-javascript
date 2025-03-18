@@ -20,7 +20,7 @@ test('get started link', async ({ page }) => {
 });
 
 
-test.only('Launch browser', async () => {
+test('Launch browser', async () => {
     const browser = await chromium.launch(); // Launches the browser
     const context = await browser.newContext(); // Creates an isolated context (like a new browser instance)
     const page = await context.newPage(); // Opens a new page (tab)
