@@ -1,7 +1,8 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+const { chromium } = require('playwright');
 
-test.only('has title', async ({ page }) => {
+test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
@@ -16,4 +17,12 @@ test('get started link', async ({ page }) => {
 
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
+
+
+test.only('Launch browser', async () => {
+    const browser = await chromium.launch(); // Launches the browser
+    const context = await browser.newContext(); // Creates an isolated context (like a new browser instance)
+    const page = await context.newPage(); // Opens a new page (tab)
+    await page.goto('https://www.google.com'); // Navigates to Google
 });
