@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test')
 
-test('firs test', async ({ page }) => {
+test('first Test', async ({ page }) => {
 
   await page.goto('https://letcode.in/');
 
