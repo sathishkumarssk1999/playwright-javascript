@@ -13,11 +13,8 @@ test("Error Message", async ({ page }) => {
     await page.locator('//button[@type="submit"]').click();
 
     const textContent = await page.locator('//*[text()="Invalid credentials"]').textContent();
-
     console.log(textContent);
-
     const msg = await page.locator('//*[text()="Invalid credentials"]');
-
     await expect(msg).toHaveText("Invalid credentials");
 
 });
