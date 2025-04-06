@@ -16,6 +16,6 @@ test('Visual regression test', async ({ page }) => {
     const screenshot = await page.screenshot();
 
     // Compare the screenshot with the baseline snapshot
-    expect(screenshot).toMatchSnapshot('snapshots/example-snapshot.png');
+    expect(screenshot).toMatchSnapshot('../snapshots/example-snapshot.png');
     
 });
